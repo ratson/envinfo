@@ -1,9 +1,8 @@
 {
-  "name": "envinfo",
+  "name": "@frat/envinfo",
   "version": "7.7.2",
   "description": "Info about your dev environment for debugging purposes",
-  "repository": "https://github.com/tabrindle/envinfo",
-  "author": "tabrindle@gmail.com",
+  "repository": "https://github.com/ratson/envinfo",
   "license": "MIT",
   "files": [
     "dist/"
@@ -92,5 +91,8 @@
   },
   "resolutions": {
     "lodash": "4.17.15"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
