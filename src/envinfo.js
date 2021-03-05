@@ -79,7 +79,7 @@ function main(props, options) {
         }, {}),
       });
     }, {});
-    return format(reduced, options);
+    return format(options.transform ? options.transform(reduced) : reduced, options);
   });
 }
 
