@@ -24,9 +24,7 @@
     "format": "prettier --write src/**/*.js",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
-    "preversion": "npm run test && webpack && git add .",
-    "postversion": "npm run executable && npm run compress && npm run release",
-    "release": "github-release upload --owner=tabrindle --repo=envinfo --tag=${npm_package_version} 'envinfo-linux.tar.gz' 'envinfo-macos.tar.gz' 'envinfo-win.zip'",
+    "prepack": "run-s test && webpack",
     "start": "node -r esm src/cli.js",
     "test": "jest --env=node && eslint src && prettier -l src/**/*.js"
   },
@@ -78,6 +76,7 @@
     "husky": "^4.2.5",
     "jest": "^22.4.3",
     "minimist": "^1.2.5",
+    "npm-run-all": "^4.1.5",
     "os-name": "^3.1.0",
     "pkg": "^4.3.4",
     "prettier": "^1.19.1",
