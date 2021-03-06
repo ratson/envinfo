@@ -1,6 +1,6 @@
 {
   "name": "@frat/envinfo",
-  "version": "7.8.2",
+  "version": "7.8.3",
   "description": "Info about your dev environment for debugging purposes",
   "repository": "https://github.com/ratson/envinfo",
   "license": "MIT",
@@ -9,7 +9,9 @@
     "index.d.ts"
   ],
   "main": "dist/envinfo.js",
-  "bin": "dist/cli.js",
+  "bin": {
+    "envinfo": "dist/cli.js"
+  },
   "types": "index.d.ts",
   "engines": {
     "node": ">=4"
