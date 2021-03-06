@@ -15,5 +15,5 @@ type MainOptions = {
   transform?: <T extends Record<string, unknown>>(x: T) => T;
 };
 
-export function main(args: MainProps, options: MainOptions): string;
-export function run(args: MainProps, options: MainOptions): string;
+export function main(args: MainProps, options: MainOptions): Promise<string>;
+export function run(args: MainProps, options: MainOptions): Promise<string>;
