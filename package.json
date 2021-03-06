@@ -5,7 +5,8 @@
   "repository": "https://github.com/ratson/envinfo",
   "license": "MIT",
   "files": [
-    "dist/"
+    "dist/",
+    "index.d.ts"
   ],
   "main": "dist/envinfo.js",
   "bin": {
