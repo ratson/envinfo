@@ -13,6 +13,9 @@ type MainOptions = {
   console?: boolean;
   title?: string;
   transform?: <T extends Record<string, unknown>>(x: T) => T;
+  json?: boolean;
+  markdown?: boolean;
+  showNotFound?: boolean;
 };
 
 export function main(args: MainProps, options: MainOptions): Promise<string>;
