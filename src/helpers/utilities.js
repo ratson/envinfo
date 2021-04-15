@@ -31,13 +31,7 @@ module.exports = {
   getClangInfo: () => {
     utils.log('trace', 'getClangInfo');
     return Promise.all([
-      utils.run('clang --version').then(v => {
-        if (utils.isMacOS) {
-          return (v.match(/clang-(.*)\)/) || [])[1];
-        }
-
-        return (v.match(/([0-9].*) /) || [])[1];
-      }),
+      utils.run('clang --version').then(utils.findVersion),
       utils.which('clang'),
     ]).then(v => utils.determineFound('Clang', v[0], v[1]));
   },
@@ -59,6 +53,14 @@ module.exports = {
       ]).then(v => utils.determineFound('Make', v[0], v[1]));
     }
     return Promise.resolve(['Make', 'N/A']);
+  },
+
+  getNinjaInfo: () => {
+    utils.log('trace', 'getNinjaInfo');
+    return Promise.all([
+      utils.run('ninja --version').then(utils.findVersion),
+      utils.run('which ninja'),
+    ]).then(v => utils.determineFound('Ninja', v[0], v[1]));
   },
 
   getMercurialInfo: () => {
